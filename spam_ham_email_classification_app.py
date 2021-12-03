@@ -9,31 +9,34 @@ Spam Ham Email Classification Application using Streamlit
 0125942 Kenny Lee Yuan Hong
 """
 
+#streamlit version 0.79.0
 # import streamlit library for streamlit module to create website application
 import streamlit as st
 import streamlit.components.v1 as components
 
 #libraries for output (print) input output stream of code
 from streamlit.report_thread import REPORT_CONTEXT_ATTR_NAME
-from contextlib import contextmanager
+from contextlib import contextmanager  #contextlib2 version 0.6.0.post1
 from threading import current_thread
 
 # utilities
-import re
-import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
-import matplotlib.pyplot as plt # data visualization library
+import re  #regex version 2021.3.17
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)   #pandas version 1.2.3
+import matplotlib.pyplot as plt # data visualization library   # matplotlib version 3.3.4
 # %matplotlib inline
-import seaborn as sns # interactive visualization library built on top on matplotlib
+import seaborn as sns # interactive visualization library built on top on matplotlib   #seaborn version 0.11.1
 sns.set(style="darkgrid")
 sns.set(font_scale=1.5)
 import string
-from nltk.corpus import stopwords
 import io 
-import sys
+import sys 
 
+#nltk version 3.5
 # nltk
 from nltk.stem import WordNetLemmatizer
+from nltk.corpus import stopwords
 
+#scikit-learn version 0.24.1
 # sklearn for model training
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.model_selection import train_test_split
@@ -44,9 +47,11 @@ from sklearn.metrics import classification_report,accuracy_score, plot_confusion
 from sklearn.metrics import precision_recall_curve
 from sklearn.metrics import auc
 
+# pickleshare version 0.7.5
 # pickle library for exporting model into pkl file
 import pickle
 
+# lime version 0.2.0.1
 # lime explainable AI for explaining result of prediction by machine learning model
 from lime.lime_text import LimeTextExplainer
 
@@ -186,13 +191,12 @@ explainer = LimeTextExplainer(class_names = class_names)
 #make pipeline of tfidf and logistic regression model
 logreg_tfidf_pipe = make_pipeline(tfidf_vector, lr_model)
 
-
 # %%
 
 #website title
 st.title("Spam Ham Email Classification Application")
 
-st.sidebar.title('Driver Drowsiness Detection System')
+st.sidebar.title('Spam Ham Email Classification Application')
 st.sidebar.subheader('Action')
 
 #sidebar in website for user to choose different webpage
@@ -362,5 +366,3 @@ elif app_mode == "Spam Ham Email Classification":
         exp_html = components.html(exp.as_html(), height=400, width = 800)
         fig = exp.as_pyplot_figure()
         st.pyplot(fig)                 
-
-    

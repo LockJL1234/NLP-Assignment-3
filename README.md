@@ -4,6 +4,7 @@
 - Algorithm: Logistic Regression
 - SMOTE for balancing dataset
 - LIME Explainable AI
+- GridSearchCV for Hyperparameter Tuning and Cross Validation
 
 This project is developed using JupyterLab and Spyder for Python.
 

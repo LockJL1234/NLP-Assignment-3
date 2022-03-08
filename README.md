@@ -18,6 +18,14 @@ The web application is developed using Streamlit framework that is in python pro
 
 ---
 
+**First**, create the conda environment by running the following command in the anaconda command prompt.
+
+```
+  conda create --name spam python=3.8.8
+  conda activate spam
+  pip install -r requirements.txt
+```  
+
 To run the web application python file, use the command below with **anaconda command prompt** under the right environment. Ensure that the command prompt is in the right directory where the web application python file or specified the directory of the web application python file. 
 
 ``` 
